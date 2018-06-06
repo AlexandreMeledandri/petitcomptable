@@ -1,7 +1,18 @@
+<?php
+    if(isset($_GET['logout'])) {
+       setcookie("lastname", "", time() - 3600, "/");
+       setcookie("firstname", "", time() - 3600, "/");
+       setcookie("psw", "", time() - 3600, "/");
+
+       header("Location: login.php");
+     }
+?>
+
 <html>
     <head>
     </head>
     <body>
+
         <div class="container">
             <?php include_once "nav.php"; ?>
             <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
