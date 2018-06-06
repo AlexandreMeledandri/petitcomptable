@@ -1,9 +1,15 @@
 <?php
+    session_start();
+
+    echo $_SESSION['idUser'];
+
     if(isset($_GET['logout'])) {
        setcookie("lastname", "", time() - 3600, "/");
        setcookie("firstname", "", time() - 3600, "/");
        setcookie("psw", "", time() - 3600, "/");
 
+       session_destroy();
+       
        header("Location: login.php");
      }
 ?>
