@@ -21,10 +21,6 @@
 
         <div class="container">
             <?php include_once "nav.php"; ?>
-            <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
-                <input name="name" type="text" />
-                <input type="submit" name="createAccount" />
-            </form>
             <?php include_once "operations.php"; ?>
             <?php include_once "footer.php"; ?>
         </div>

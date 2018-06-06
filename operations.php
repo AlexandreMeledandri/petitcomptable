@@ -2,7 +2,7 @@
 function db_connect(){
     try {
       $host = "localhost";
-      $dbname = "petitcomptable";
+      $dbname = "petitcon";
       $user = "root";
       $password = "root";
 
@@ -31,9 +31,13 @@ $labels = array_keys($operations[0]);
     <tr>
     <?php
     foreach($labels as $label){
-        echo '<th scope="col">';
-        echo $label;
-        echo '</th>';
+
+        if($label !== 'id' && $label !== 'idaccount'){
+            echo '<th scope="col">';
+            echo $label;
+            echo '</th>';
+        }
+
     }
     ?>
     </tr>
@@ -44,11 +48,13 @@ $labels = array_keys($operations[0]);
         return array_map(function($val){return $val;},$value);
     
     },$operations);
-    var_dump($values);
+    //var_dump($values);
     foreach($operations as $key => $value){
         echo '<tr>';
             foreach($value as $subKey => $subValue) {
-                echo "<td>" . $subValue . "</td>";
+                if($subKey !== 'id' && $subKey !== 'idaccount'){
+                    echo "<td>" . $subValue . "</td>";
+                }
             }
     
         echo '</tr>';
