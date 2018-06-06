@@ -8,6 +8,7 @@
                 <input name="name" type="text" />
                 <input type="submit" name="createAccount" />
             </form>
+            <?php include_once "operations.php"; ?>
             <?php include_once "footer.php"; ?>
         </div>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
