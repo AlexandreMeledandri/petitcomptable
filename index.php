@@ -20,10 +20,9 @@ include_once "db.php";
             <?php include_once "header.php"; ?>
             <?php include_once "barreOperation.php"; ?>
             <div class="row">
-            if(isset($_GET['profile'])){
-                <?php include_once "profile.php"; ?>
-            }
-            
+                <?php 
+                if(isset($_GET['profile'])){include_once "profile.php";} ?>
+            <?php include_once "accountmanagement.php"; ?>
             </div>
             <?php include_once "profile.php"; ?>
             <?php include_once "footer.php"; ?>
