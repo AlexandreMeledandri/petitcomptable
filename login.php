@@ -87,69 +87,65 @@ function getMessage(){
   </head>
   <body>
     <div class="container">
-
-      <!--- BEAU FORMULAIRE --->
-      <div class="container">
-      	<div class="row">
-  			     <div class="col-md-12 col-md-offset-3">
-  				    <div class="panel panel-login" style="padding: 15px;">
-  					     <div class="panel-heading">
-  						      <div class="row">
-  							       <div class="col-md-6">
-  								        <a href="#" class="active" id="login-form-link">Login</a>
-  							       </div>
-  							       <div class="col-md-6">
-  								        <a href="#" id="register-form-link">Register</a>
-  							       </div>
-  						      </div>
-  						      <hr>
-  					     </div>
-  					     <div class="panel-body">
-  						      <div class="row">
-  							       <div class="col-lg-12">
-  								       <form id="login-form" action="" method="post" role="form" style="display: block;">
-  									         <div class="form-group">
-  										          <input type="text" name="lastname" tabindex="1" class="form-control" placeholder="lastname">
-  									         </div>
-                             <div class="form-group">
-  										          <input type="text" name="firstname" tabindex="1" class="form-control" placeholder="firstname">
-  									         </div>
-  									         <div class="form-group">
-  										          <input type="password" name="psw" tabindex="2" class="form-control" placeholder="Password">
-  									         </div>
-  									         <div class="form-group">
-  										          <div class="row">
-  											           <div class="col-sm-6 col-sm-offset-3">
-  												            <input type="submit" name="login" tabindex="4" class="form-control btn btn-login" value="Log In">
-  											           </div>
-  										          </div>
-  									         </div>
-  								       </form>
-  								       <form id="register-form" action="" method="post" role="form" style="display: none;">
-  									         <div class="form-group">
-  										          <input type="text" name="lastname"  tabindex="1" class="form-control" placeholder="lastname">
-  									         </div>
-  									         <div class="form-group">
-  										          <input type="text" name="firstname"  tabindex="1" class="form-control" placeholder="firstname">
-  									         </div>
-  									         <div class="form-group">
-  										          <input type="password" name="psw"  tabindex="2" class="form-control" placeholder="Password">
-  									         </div>
-  									         <div class="form-group">
-  										          <div class="row">
-  											           <div class="col-sm-6 col-sm-offset-3">
-  												            <input type="submit" name="createAccount" tabindex="4" class="form-control btn btn-register" value="Register Now">
-  											           </div>
-  										          </div>
-  									         </div>
-  								        </form>
-  							       </div>
-  						      </div>
-  					     </div>
-  				    </div>
-  			   </div>
-  		  </div>
-  	  </div>
-    </div>
+			<div class="row">
+						<div class="col-md-12 col-md-offset-3">
+						<div class="panel panel-login" style="padding: 15px;">
+								<div class="panel-heading">
+									<div class="row">
+											<div class="col-md-6">
+												<a href="#" class="active" id="login-form-link">Login</a>
+											</div>
+											<div class="col-md-6">
+												<a href="#" id="register-form-link">Register</a>
+											</div>
+									</div>
+									<hr>
+								</div>
+								<div class="panel-body">
+									<div class="row">
+											<div class="col-lg-12">
+												<form id="login-form" action="" method="post" role="form" style="display: block;">
+														<div class="form-group">
+															<input type="text" name="lastname" tabindex="1" class="form-control" placeholder="lastname">
+														</div>
+														<div class="form-group">
+															<input type="text" name="firstname" tabindex="1" class="form-control" placeholder="firstname">
+														</div>
+														<div class="form-group">
+															<input type="password" name="psw" tabindex="2" class="form-control" placeholder="Password">
+														</div>
+														<div class="form-group">
+															<div class="row">
+																	<div class="col-sm-6 col-sm-offset-3">
+																		<input type="submit" name="login" tabindex="4" class="form-control btn btn-login" value="Log In">
+																	</div>
+															</div>
+														</div>
+												</form>
+												<form id="register-form" action="" method="post" role="form" style="display: none;">
+														<div class="form-group">
+															<input type="text" name="lastname"  tabindex="1" class="form-control" placeholder="lastname">
+														</div>
+														<div class="form-group">
+															<input type="text" name="firstname"  tabindex="1" class="form-control" placeholder="firstname">
+														</div>
+														<div class="form-group">
+															<input type="password" name="psw"  tabindex="2" class="form-control" placeholder="Password">
+														</div>
+														<div class="form-group">
+															<div class="row">
+																	<div class="col-sm-6 col-sm-offset-3">
+																		<input type="submit" name="createAccount" tabindex="4" class="form-control btn btn-register" value="Register Now">
+																	</div>
+															</div>
+														</div>
+												</form>
+											</div>
+									</div>
+								</div>
+						</div>
+					</div>
+			</div>
+		</div>
   </body>
 </html>

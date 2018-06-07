@@ -21,16 +21,18 @@ $account = 1;
 
 $query = $db->prepare("SELECT * FROM operations WHERE idaccount = ?");
 $query->execute(array($account));
-$operations = $query->fetch(PDO::FETCH_ASSOC);
+$operations = $query->fetchAll(PDO::FETCH_ASSOC);
+
+$labels = array_keys($operations[0]);
 
 ?>
 <table class="table">
     <thead>
     <tr>
     <?php
-    foreach($operations as $key => $value){
+    foreach($labels as $label){
         echo '<th scope="col">';
-        echo $key;
+        echo $label;
         echo '</th>';
     }
     ?>
@@ -38,11 +40,17 @@ $operations = $query->fetch(PDO::FETCH_ASSOC);
     </thead>
     <tbody>
     <?php
+    $values = array_map(function($value){
+        return array_map(function($val){return $val;},$value);
+
+    },$operations);
+    var_dump($values);
     foreach($operations as $key => $value){
         echo '<tr>';
-        echo '<th>';
-        echo $value;
-        echo '</th>';
+            foreach($value as $subKey => $subValue) {
+                echo "<td>" . $subValue . "</td>";
+            }
+
         echo '</tr>';
     }
     ?>
