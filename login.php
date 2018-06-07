@@ -1,4 +1,4 @@
-
+<!-- Creation de compte -->
 <?php
 
 session_start();
@@ -44,8 +44,8 @@ function login($lastname, $firstname, $psw, $fromCookie = false) {
     setcookie("psw", $hash, time() + (86400 * 30), "/"); // 86400 = 1 jour
 
     $_SESSION['idUser'] = $dataUser['id'];
-    
-    header("Location: index.php"); // Lorsque log envoie vers la page Index
+var_dump($_SESSION['idUser']);
+    //header("Location: index.php"); // Lorsque log envoie vers la page Index
   }else {
     echo "Identifiant ou mot de passe incorrect.";
 

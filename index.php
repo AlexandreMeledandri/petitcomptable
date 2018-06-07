@@ -6,11 +6,8 @@ include_once "db.php";
        setcookie("psw", "", time() - 3600, "/");
 
        session_destroy();
-       
+
        header("Location: login.php");
-     }
-     if($_GET['accounts']){
-         var_dump($_GET);
      }
 ?>
 
