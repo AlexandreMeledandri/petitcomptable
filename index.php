@@ -1,4 +1,5 @@
 <?php
+include_once "db.php";
     if(isset($_GET['logout'])) {
        setcookie("lastname", "", time() - 3600, "/");
        setcookie("firstname", "", time() - 3600, "/");
@@ -8,7 +9,6 @@
 
        header("Location: login.php");
      }
-     var_dump($_SESSION['idUser']);
 ?>
 
 <html>
@@ -17,8 +17,11 @@
     <body>
 
         <div class="container">
-            <?php include_once "nav.php"; ?>
+            <?php include_once "header.php"; ?>
+            <?php include_once "barreOperation.php"; ?>
+            <?php include_once "accountselection.php"; ?>
             <?php include_once "operations.php"; ?>
+            <?php include_once "profile.php"; ?>
             <?php include_once "footer.php"; ?>
         </div>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
