@@ -2,7 +2,7 @@
 function db_connect(){
     try {
       $host = "localhost";
-      $dbname = "petitcomptable";
+      $dbname = "petitcon";
       $user = "root";
       $password = "root";
 
@@ -22,7 +22,6 @@ $account = 1;
 $query = $db->prepare("SELECT * FROM operations WHERE idaccount = ?");
 $query->execute(array($account));
 $operations = $query->fetch(PDO::FETCH_ASSOC);
-var_dump($operations);
 
 ?>
 <table class="table">
