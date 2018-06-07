@@ -19,8 +19,10 @@ include_once "db.php";
         <div class="container">
             <?php include_once "header.php"; ?>
             <?php include_once "barreOperation.php"; ?>
+            <div class="row">
             <?php include_once "accountselection.php"; ?>
             <?php include_once "operations.php"; ?>
+            </div>
             <?php include_once "profile.php"; ?>
             <?php include_once "footer.php"; ?>
         </div>

@@ -9,14 +9,14 @@
 <body>
     <?php
     if (isset($_POST['firstname']) && isset($_POST['lastname'])) {
-        $req = $bd->prepare("UPDATE user SET firstname = ?, lastname = ? WHERE id = 2");
+        $req = $db->prepare("UPDATE user SET firstname = ?, lastname = ? WHERE id = 2");
         $req->execute(array($_POST['firstname'], $_POST['lastname']));
     }
     if(!empty($_POST['psw'])){
-        $req = $bd->prepare("UPDATE user SET psw = ? WHERE id = 2");
+        $req = $db->prepare("UPDATE user SET psw = ? WHERE id = 2");
         $req->execute(array($_POST['psw']));
     }
-    $req = $bd->query("SELECT * FROM user WHERE id = 2");
+    $req = $db->query("SELECT * FROM user WHERE id = 2");
     $result = $req->fetch();
     ?>
     <div>
