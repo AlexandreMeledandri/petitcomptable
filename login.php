@@ -4,7 +4,6 @@
 session_start();
 
 if(isset($_POST['createAccount'])) {
-  $db = db_connect();
   $password = $_POST['psw'];
   $hash = hash("sha256", $password . $_POST['lastname']);//Mot de passe crypter
 
@@ -28,7 +27,6 @@ if(isset($_POST['login'])) {
 }
 
 function login($lastname, $firstname, $psw, $fromCookie = false) {
-  $db = db_connect();
 
   if($fromCookie == true) {$hash = $psw;}
   else {$hash = hash("sha256", $psw . $_POST['lastname']);}

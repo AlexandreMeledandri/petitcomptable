@@ -1,22 +1,4 @@
 <?php
-function db_connect(){
-    try {
-      $host = "localhost";
-      $dbname = "petitcon";
-      $user = "root";
-      $password = "";
-
-      $db = new PDO('mysql:host='.$host.';dbname='.$dbname.'', $user, $password);
-      return $db;
-    } catch (Exception $e) {
-      die('ERREUR : '.$e->getMessage());
-    }
-
-  }
-function getMessage(){
-    echo 'erreur';
-}
-$db = db_connect();
 $account = 1;
 
 $query = $db->prepare("SELECT * FROM operations WHERE idaccount = ?");
@@ -26,7 +8,7 @@ $operations = $query->fetchAll(PDO::FETCH_ASSOC);
 $labels = array_keys($operations[0]);
 
 ?>
-<table class="table">
+<table class="table table-bordered">
     <thead>
     <tr>
     <?php

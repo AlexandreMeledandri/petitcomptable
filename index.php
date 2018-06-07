@@ -1,4 +1,5 @@
 <?php
+include_once "db.php";
     if(isset($_GET['logout'])) {
        setcookie("lastname", "", time() - 3600, "/");
        setcookie("firstname", "", time() - 3600, "/");
