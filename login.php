@@ -51,28 +51,6 @@ function login($lastname, $firstname, $psw, $fromCookie = false) {
 
   }
 }
-
-
-/****** Connection à la base de données *******/
-
-function db_connect(){
-
-  try {
-    $host = "localhost";
-    $dbname = "petitcon";
-    $user = "root";
-    $password = "";
-
-    $db = new PDO('mysql:host='.$host.';dbname='.$dbname.'', $user, $password);
-    return $db;
-  }catch (Exception $e) {
-    die('ERREUR : '.$e->getMessage());
-  }
-
-}
-function getMessage(){
-  echo 'erreur';
-}
 ?>
 <html>
   <head>

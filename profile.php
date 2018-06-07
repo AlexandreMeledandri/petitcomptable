@@ -7,22 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <?php 
-    $bdd = new PDO("mysql:host=localhost;dbname=petitcon;charset = uft8", "root", "");
+    <?php
     if (isset($_POST['firstname']) && isset($_POST['lastname'])) {
-        $req = $bdd->prepare("UPDATE user SET firstname = ?, lastname = ? WHERE id = 2");
+        $req = $bd->prepare("UPDATE user SET firstname = ?, lastname = ? WHERE id = 2");
         $req->execute(array($_POST['firstname'], $_POST['lastname']));
     }
     if(!empty($_POST['psw'])){
-        $req = $bdd->prepare("UPDATE user SET psw = ? WHERE id = 2");
+        $req = $bd->prepare("UPDATE user SET psw = ? WHERE id = 2");
         $req->execute(array($_POST['psw']));
     }
-    $req = $bdd->query("SELECT * FROM user WHERE id = 2");
+    $req = $bd->query("SELECT * FROM user WHERE id = 2");
     $result = $req->fetch();
     ?>
     <div>
-        <?php include_once "nav.php"; ?>
-
     <form method="POST" action="">
         <input type="text" name="firstname" placeholder="firstname" value="<?php echo $result['firstname']; ?>">
         <input type="text" name="lastname" placeholder="lastname" value="<?php echo $result['lastname']; ?>">

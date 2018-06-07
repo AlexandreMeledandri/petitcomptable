@@ -26,7 +26,6 @@ $labels = array_keys($operations[0]);
         return array_map(function($val){return $val;},$value);
     
     },$operations);
-    var_dump($values);
     foreach($operations as $key => $value){
         echo '<tr>';
             foreach($value as $subKey => $subValue) {

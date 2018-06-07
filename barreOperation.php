@@ -1,24 +1,5 @@
 <?php
-
-		function db_connect(){
-        try {
-          $host = "localhost";
-          $dbname = "petitcomptable";
-          $user = "root";
-          $password = "root";
-
-          $db = new PDO('mysql:host='.$host.';dbname='.$dbname.'', $user, $password);
-          return $db;
-        } catch (Exception $e) {
-          die('ERREUR : '.$e->getMessage());
-        }
-
-      }
-      function getMessage(){
-        echo 'erreur';
-      }
       	$idUser = 6;
-		$db = db_connect();
 		$category = $db->query("SELECT * FROM category");
 		$category = $category->fetchAll(PDO::FETCH_ASSOC);
 		$account = $db->prepare("SELECT label, id FROM accounts WHERE iduser = ?");
@@ -26,10 +7,6 @@
 		$account = $account->fetchALL(PDO::FETCH_ASSOC);
 
 	      if(isset($_POST['createOperation'])) {
-
-	      	//var_dump(($_POST));
-
-
 	    		$req = $db->prepare("INSERT INTO operations (idaccount, date, label, type, mode, amount, category) VALUES(:account, NOW(), :label, (SELECT type FROM category where id = :category), :mode, :amount, :category)");
 
 
@@ -39,8 +16,6 @@
 	          		"mode"  	=> $_POST['mode'],
 	          		"amount"  	=> $_POST['amount'],
 	          		"category"  => $_POST['category']));
-
-     // echo $req->rowCount();
   			}
 	?>
 
