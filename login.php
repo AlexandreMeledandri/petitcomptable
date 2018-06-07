@@ -1,6 +1,6 @@
 <!-- Creation de compte -->
 <?php
-
+include_once "db.php";
 session_start();
 
 if(isset($_POST['createAccount'])) {
@@ -27,7 +27,7 @@ if(isset($_POST['login'])) {
 }
 
 function login($lastname, $firstname, $psw, $fromCookie = false) {
-
+  $db = $GLOBALS['db'];
   if($fromCookie == true) {$hash = $psw;}
   else {$hash = hash("sha256", $psw . $_POST['lastname']);}
 
@@ -44,7 +44,6 @@ function login($lastname, $firstname, $psw, $fromCookie = false) {
     setcookie("psw", $hash, time() + (86400 * 30), "/"); // 86400 = 1 jour
 
     $_SESSION['idUser'] = $dataUser['id'];
-var_dump($_SESSION['idUser']);
     //header("Location: index.php"); // Lorsque log envoie vers la page Index
   }else {
     echo "Identifiant ou mot de passe incorrect.";
