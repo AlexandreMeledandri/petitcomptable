@@ -1,5 +1,5 @@
 <?php 
-$bdd = new PDO("mysql:host=localhost;dbname=petitcon;charset = uft8", "root", "root");
+$bdd = new PDO("mysql:host=localhost;dbname=petitcon;charset = uft8", "root", "");
 ?>
 <ul class="list-group" style="width: 20%;">
   <?php
