@@ -39,7 +39,6 @@ function login($lastname, $firstname, $psw, $fromCookie = false) {
         "firstname" => $firstname,
         "psw"       => $hash));
   $dataUser = $req->fetch();
-  var_dump($_POST);
 
   if($req->rowCount() == 1) {
     setcookie("lastname", $lastname, time() + (86400 * 30), "/"); // 86400 = 1 jour
@@ -47,8 +46,8 @@ function login($lastname, $firstname, $psw, $fromCookie = false) {
     setcookie("psw", $hash, time() + (86400 * 30), "/"); // 86400 = 1 jour
 
     $_SESSION['idUser'] = $dataUser['id'];
-
-    header("Location: index.php"); // Lorsque log envoie vers la page Index
+var_dump($_SESSION['idUser']);
+    //header("Location: index.php"); // Lorsque log envoie vers la page Index
   }else {
     echo "Identifiant ou mot de passe incorrect.";
 

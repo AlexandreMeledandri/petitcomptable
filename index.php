@@ -8,6 +8,7 @@
 
        header("Location: login.php");
      }
+     var_dump($_SESSION['idUser']);
 ?>
 
 <html>
