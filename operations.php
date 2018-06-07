@@ -6,7 +6,7 @@ function db_connect(){
       $user = "root";
       $password = "";
 
-      $db = new PDO('mysql:host=localhost;dbname='.$dbname.'', $user, $password);
+      $db = new PDO('mysql:host='.$host.';dbname='.$dbname.'', $user, $password);
       return $db;
     } catch (Exception $e) {
       die('ERREUR : '.$e->getMessage());
@@ -31,13 +31,9 @@ $labels = array_keys($operations[0]);
     <tr>
     <?php
     foreach($labels as $label){
-
-        if($label !== 'id' && $label !== 'idaccount'){
-            echo '<th scope="col">';
-            echo $label;
-            echo '</th>';
-        }
-
+        echo '<th scope="col">';
+        echo $label;
+        echo '</th>';
     }
     ?>
     </tr>
@@ -48,13 +44,11 @@ $labels = array_keys($operations[0]);
         return array_map(function($val){return $val;},$value);
     
     },$operations);
-    //var_dump($values);
+    var_dump($values);
     foreach($operations as $key => $value){
         echo '<tr>';
             foreach($value as $subKey => $subValue) {
-                if($subKey !== 'id' && $subKey !== 'idaccount'){
-                    echo "<td>" . $subValue . "</td>";
-                }
+                echo "<td>" . $subValue . "</td>";
             }
     
         echo '</tr>';
