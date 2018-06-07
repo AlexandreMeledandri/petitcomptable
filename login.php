@@ -21,7 +21,6 @@ if(isset($_POST['login'])) {
   login($_POST['lastname'], $_POST['firstname'], $_POST['psw']);
 }else {
   if(isset($_COOKIE['lastname']) && isset($_COOKIE['firstname']) && isset($_COOKIE['psw'])) {
-    echo $_COOKIE['psw'];
     login($_COOKIE['lastname'], $_COOKIE['firstname'], $_COOKIE['psw'], true);
   }
 }
@@ -44,7 +43,7 @@ function login($lastname, $firstname, $psw, $fromCookie = false) {
     setcookie("psw", $hash, time() + (86400 * 30), "/"); // 86400 = 1 jour
 
     $_SESSION['idUser'] = $dataUser['id'];
-    //header("Location: index.php"); // Lorsque log envoie vers la page Index
+    header("Location: index.php"); // Lorsque log envoie vers la page Index
   }else {
     echo "Identifiant ou mot de passe incorrect.";
 
