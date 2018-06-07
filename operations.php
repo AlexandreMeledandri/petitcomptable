@@ -2,11 +2,11 @@
 function db_connect(){
     try {
       $host = "localhost";
-      $dbname = "petitcomptable";
+      $dbname = "petitcon";
       $user = "root";
-      $password = "root";
+      $password = "";
 
-      $db = new PDO('mysql:host='.$host.';dbname='.$dbname.'', $user, $password);
+      $db = new PDO('mysql:host=localhost;dbname='.$dbname.'', $user, $password);
       return $db;
     } catch (Exception $e) {
       die('ERREUR : '.$e->getMessage());
