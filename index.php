@@ -18,13 +18,15 @@ include_once "db.php";
 
         <div class="container">
             <?php include_once "header.php"; ?>
-            <?php include_once "barreOperation.php"; ?>
             <div class="row">
                 <?php 
-                if(isset($_GET['profile'])){include_once "profile.php";} ?>
-            <?php include_once "accountmanagement.php"; ?>
+                if(isset($_GET['profile'])){include_once "profile.php";
+                } else {
+                    include_once "barreOperation.php";
+                    include_once "accountmanagement.php";
+                }
+                 ?>
             </div>
-            <?php include_once "profile.php"; ?>
             <?php include_once "footer.php"; ?>
         </div>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">

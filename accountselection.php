@@ -2,7 +2,8 @@
     <ul class="list-group">
     <?php
         $req = $db->prepare("SELECT id, label FROM accounts WHERE iduser = ?");
-        $req->execute(array($SESSION['idUser']));
+        $req->execute(array($_SESSION['idUser']));
+        var_dump($_SESSION['idUser']);
         while ($result = $req->fetch()) { ?> 
             <li class="list-group-item list-group-item-action"><a href="index.php?accounts=<?php echo $result['id'] ?>"><?php echo $result['label']; ?></a></li>
             <?php
