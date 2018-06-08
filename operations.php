@@ -25,14 +25,14 @@ $labels = array_keys($operations[0]);
         <?php
         $values = array_map(function($value){
             return array_map(function($val){return $val;},$value);
-
+        
         },$operations);
         foreach($operations as $key => $value){
             echo '<tr>';
                 foreach($value as $subKey => $subValue) {
                     echo "<td>" . $subValue . "</td>";
                 }
-
+        
             echo '</tr>';
         }
         ?>
