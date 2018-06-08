@@ -31,7 +31,8 @@
             {
                 $req = $db->prepare("INSERT INTO accounts(iduser, balance, currency, label, type) VALUES(?, ?, ?, ?, ?)");
                 $req->execute(array($_SESSION['idUser'], $_POST['balance'], $_POST['currency'], $_POST['label'], $_POST['type']));
-            }            
+                header('location:index.php');
+            }          
         }else{echo "accounts > 10";}
     ?>
 </div>

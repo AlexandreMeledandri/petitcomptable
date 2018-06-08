@@ -4,7 +4,7 @@ function db_connect(){
       $host = "localhost";
       $dbname = "petitcon";
       $user = "root";
-      $password = "";
+      $password = "root";
 
       $db = new PDO('mysql:host='.$host.';dbname='.$dbname.'', $user, $password);
       return $db;
