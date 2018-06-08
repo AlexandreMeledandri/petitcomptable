@@ -21,11 +21,17 @@
             <input type="submit" value="Add account">
     </form>
     <?php 
-    var_dump($_POST);
-        if(isset($_POST['balance']) && isset($_POST['currency']) && isset($_POST['label']) && isset($_POST['type']))
-        {
-            $req = $db->prepare("INSERT INTO accounts(iduser, balance, currency, label, type) VALUES(?, ?, ?, ?, ?)");
-            $req->execute(array($_SESSION['idUser'], $_POST['balance'], $_POST['currency'], $_POST['label'], $_POST['type']));
-        }
+
+        $req = $db ->prepare("SELECT COUNT(`iduser`) FROM accounts WHERE iduser = ? ");
+        $req -> execute(array($_SESSION['idUser']));
+        $result = $req->fetch();
+
+        if($result != 10){
+            if(isset($_POST['balance']) && isset($_POST['currency']) && isset($_POST['label']) && isset($_POST['type']))
+            {
+                $req = $db->prepare("INSERT INTO accounts(iduser, balance, currency, label, type) VALUES(?, ?, ?, ?, ?)");
+                $req->execute(array($_SESSION['idUser'], $_POST['balance'], $_POST['currency'], $_POST['label'], $_POST['type']));
+            }            
+        }else{echo "accounts > 10";}
     ?>
 </div>
