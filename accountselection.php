@@ -1,6 +1,7 @@
 <div class="col-md-4">
     <ul class="list-group">
     <?php
+        //iduser = 6;
         $req = $db->prepare("SELECT id, label FROM accounts WHERE iduser = ?");
         $req->execute(array($_SESSION['idUser']));
         while ($result = $req->fetch()) { ?> 

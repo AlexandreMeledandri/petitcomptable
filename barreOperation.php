@@ -28,16 +28,16 @@
 			<form method="post" action="">
 				<fieldset>
 
-					<label for="label">Libéllé : </label>
+					<label for="label">Label : </label>
 						       <input type="text" name="label" id="libelle" maxlength="35" />
 
-					<label for="operation">Type opération :</label>
+					<label for="operation">Operation type :</label>
 						<SELECT id="type" name="type" >
-							<OPTION value="debit">Débiter</OPTION>
-							<OPTION value="credit">Créditer</OPTION>
+							<OPTION value="debit">Debitr</OPTION>
+							<OPTION value="credit">Credit</OPTION>
 						</SELECT>
 
-						<label for="category">Categories :</label>
+						<label for="category">Category :</label>
 						<SELECT id="idCategory" onchange="catChange();return false;" name="category">
 							<?php
 							foreach($category as $cat){
@@ -47,16 +47,16 @@
 							?>
 						</SELECT>
 
-							<label for="mode">Mode d'opération : </label>
+							<label for="mode">Mode of operation : </label>
 								<input type="radio" name="mode" value='Credit_card'/>Credit card</input>
-								<input type="radio" name="mode" value='Cheque'/>Chéque</input>
+								<input type="radio" name="mode" value='Bank_check'/>Bank_Check</input>
 
 							</br>
 
-					<label for="montant">Veuillez indiquer le montant de l'opération ?</label>
+					<label for="montant">Please indicate the amount of the transaction :</label>
 						       <input type="number" name="amount" id="amount" />
 
-					<label for="account">Veuillez renseignez votre compte : </label>
+					<label for="account">Please fill in your account : </label>
 					<select id='idAccount' name ="account">
 						     <?php
 							foreach($account as $cmpt){
