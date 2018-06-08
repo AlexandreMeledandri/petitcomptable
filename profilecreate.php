@@ -20,4 +20,3 @@
             <input type="text" name="balance" id="balance" maxlength="10" />
     </form>
 </div>
-<?php
